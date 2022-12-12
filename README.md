@@ -15,6 +15,8 @@ Suhas Venkatesan
 
 App Description:
 
+This app allows people to enter their sports betting information and retrieve sports betting information from major sportsbooks.
+
 API Links:
 
 Youtube Demo Video:
