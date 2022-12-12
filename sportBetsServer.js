@@ -48,3 +48,15 @@ app.use(bodyParser.urlencoded({extended:false})); //Allows processing of request
 app.get("/", (request, response) => {
     response.render("index");
 });
+
+app.get("/enterBets", (request, response) => {
+    response.render("enterBets");
+});
+
+app.get("/todaysBets", (request, response) => {
+    response.render("todaysBets");
+});
+
+app.get("/betHistory", (request, response) => {
+    response.render("betHistory");
+});
