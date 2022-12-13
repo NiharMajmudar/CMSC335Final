@@ -8,6 +8,7 @@ const { response } = require('express');
 const app = express();
 
 require("dotenv").config({ path: path.resolve(__dirname, '.env') }) 
+app.use(express.static(__dirname));
 
 if(process.argv.length != 3){
     process.stdout.write("Usage -> node sportBetsServer.js PORT_NUMBER_HERE\n");
