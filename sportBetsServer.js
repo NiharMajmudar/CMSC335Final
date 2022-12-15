@@ -10,18 +10,13 @@ const app = express();
 require("dotenv").config({ path: path.resolve(__dirname, '.env') }) 
 app.use(express.static(__dirname));
 
-if(process.argv.length != 3){
-    process.stdout.write("Usage -> node sportBetsServer.js PORT_NUMBER_HERE\n");
-    process.exit(1);
-}
-
-let portNumber = process.argv[2];
+const portNumber = process.env.portNumber || 5000;
 
 process.stdin.setEncoding("utf8"); /* encoding */
 
 app.listen(portNumber);
 
-console.log(`Web server is running at http://localhost:${portNumber}`);
+console.log(`Server is listening on the port ${portNumber}`);
 process.stdout.write("Type stop to shutdown the server: ");
 
 process.stdin.on('readable', () => {  /* on equivalent to addEventListener */
