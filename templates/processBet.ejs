@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Bet Confirmation</title>
+    <link rel="stylesheet" href="templates/style.css">
+</head>
+
+<body>
+    <div class="navigation">
+        <a class="active" href="/">Home</a>
+        <a href="/enterBets">Enter Bets</a>
+        <a href="/todaysBets">Todays Bets</a>
+        <a href="/betHistory">History</a>
+    </div>
+    <div id="navigation"></div>
+	<h1>Bet Information</h1>
+	<div>
+		<strong>Name: </strong><%- name %><br>
+		<strong>Email Address: </strong><%- email %><br>
+		<strong>Game ID: </strong><%- game %><br>
+        <strong>Team: </strong><%- team %><br>
+        <strong>Bet Amount: </strong><br><%- bet %><br>
+        <hr>
+        <hr>
+		<a href="/">HOME</a>
+	</div>
+</body>
+
+</html>

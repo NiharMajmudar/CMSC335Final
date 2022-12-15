@@ -15,8 +15,21 @@
         <a href="/betHistory">History</a>
     </div>
     <div id="navigation"></div>
-	<h1>Enter your bets</h1>
-    We should do something here with a form that allows people to enter their bets
+	<h1>Enter your bet</h1>
+    <form action="/processBet" method="post" onsubmit="return confirm('Are you sure you want to submit your bet?\nYou will not be able to change your bet once submitted.');">
+		<fieldset>
+			<label>Name: <input type="text" name="name" required/></label>
+			<label>Email Address: <input type="email" name="email" required></label><br><br>
+            <label>Game ID:<input type="number" name="game" min="0" required></label><br><br>
+            <label>Team:<input type="text" name="team" required></label><br><br>
+            <label>Bet Amount: <input type="number" name="bet" min="0" required></label><br><br>
+            
+		</fieldset>
+
+		<br>
+		<input type="reset" />
+		<input type="submit" value="Submit Bet"/>
+	</form>
 </body>
 
 </html>
