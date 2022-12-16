@@ -11,7 +11,12 @@ const app = express();
 require("dotenv").config({ path: path.resolve(__dirname, 'credentials/.env') });
 app.use(express.static(__dirname));
 
-const portNumber = process.env.portNumber || 5001;
+if(process.argv.length != 3){
+    process.stdout.write("Usage -> node sportBetsServer.js PORT_NUMBER_HERE\n");
+    process.exit(1);
+}
+
+const portNumber = process.argv[2];
 
 process.stdin.setEncoding("utf8"); /* encoding */
 
@@ -21,15 +26,12 @@ const dbName = process.env.MONGO_DB_NAME;
 const collection = process.env.MONGO_COLLECTION;
 const databaseAndCollection = {db: dbName, collection:collection};
 
-console.log(userName);
-console.log(password);
-
 const uri = `mongodb+srv://${userName}:${password}@cluster0.njiausk.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 app.listen(portNumber);
 
-console.log(`Click here to access server: http://localhost:${portNumber}`);
+console.log(`Web server is running at http://localhost:${portNumber}`);
 process.stdout.write("Type stop to shutdown the server: ");
 
 process.stdin.on('readable', () => {  /* on equivalent to addEventListener */
