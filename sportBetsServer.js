@@ -77,9 +77,39 @@ app.post("/processBet", async (request, response) => {
     }
 });
 
-app.get("/betHistory", (request, response) => {
-    response.render("betHistory");
+app.get("/betHistory", async (request, response) => {
+    try {
+        await client.connect();
+        const entries = await findBet(client, databaseAndCollection);
+        let betstable = "<table border=\"1\"><tr><th>Name</th><th>Game ID</th><th>Team To Win</th><th>Bet Amount</th></tr>";
+        entries.forEach(entry => {
+            let curr = "";
+            curr += "<tr><td>";
+            curr += entry['name'];
+            curr += "</td><td>";
+            curr += entry['game'];
+            curr += "</td><td>";
+            curr += entry['team'];
+            curr += "</td><td>";
+            curr += entry['bet'];
+            curr += "</td></tr>";
+            betstable += curr;
+        });
+        betstable += "</table>"
+        variables = {priorBets: betstable}
+        response.render("betHistory", variables);
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
 });
+
+async function findBet(client, databaseAndCollection) {
+    const cursor = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).find({});
+    const result = await cursor.toArray();
+    return result;
+}
 
 async function insertBet(client, databaseAndCollection, bet) {
     const result = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(bet);
