@@ -3,19 +3,19 @@ CMSC335 Final Project
 
 Team Members:
 
-Nihar Majmudar niharm
+Nihar Majmudar (niharm)
 
-Raymond McGhee rjmcghee
+Raymond McGhee (rjmcghee)
 
-Alex Srey
+Alex Srey (asrey)
 
-Nick Lawrence lawr3nc3
+Nick Lawrence (lawr3nc3)
 
-Suhas Venkatesan vsuhas1
+Suhas Venkatesan (vsuhas1)
 
 App Description:
 
-This app allows people to enter their sports betting information and retrieve sports betting information from major sportsbooks.
+This app allows people to enter their sports betting information and retrieve sports scores from major sportsbooks. You can enter bets, view past bets, and view scores.
 
 API Links:
 
