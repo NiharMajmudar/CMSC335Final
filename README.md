@@ -23,4 +23,8 @@ https://the-odds-api.com/liveapi/guides/v4/
 
 In this API we use the GET scores endpoint
 
+Hosted Site Link:
+
+http://sportsbettingsite.onrender.com
+
 Youtube Demo Video:
