@@ -19,4 +19,8 @@ This app allows people to enter their sports betting information and retrieve sp
 
 API Links:
 
+https://the-odds-api.com/liveapi/guides/v4/
+
+In this API we use the GET scores endpoint
+
 Youtube Demo Video:
