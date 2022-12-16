@@ -8,7 +8,7 @@ const { response } = require('express');
 const axios = require('axios')
 const app = express();
 
-require("dotenv").config({ path: path.resolve(__dirname, 'credentials/.env') });
+require("dotenv").config({ path: path.resolve(__dirname, './.env') });
 app.use(express.static(__dirname));
 
 if(process.argv.length != 3){
